@@ -687,25 +687,6 @@
     });
   }
 
-  /* ── Splash effect on pot ── */
-  function splashOnPot(pot) {
-    const splashEmojis = ['💦', '✨', '🔥'];
-    const s = document.createElement('div');
-    s.textContent = splashEmojis[randInt(0, splashEmojis.length)];
-    s.style.cssText = [
-      'position:fixed',
-      `left:${pot.x - 12}px`,
-      `top:${pot.y - 20}px`,
-      'font-size:1.4rem',
-      'pointer-events:none',
-      'z-index:5',
-      'animation:potSplash 0.5s ease-out forwards',
-    ].join(';');
-    s.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(s);
-    s.addEventListener('animationend', () => s.remove(), { once: true });
-  }
-
   /* ── Flying food factory — tosses into pot ── */
   const foodEmojis = ['🌶️', '🧅', '🫚', '🥬', '🌿', '🫛', '🧄', '🥕'];
 
